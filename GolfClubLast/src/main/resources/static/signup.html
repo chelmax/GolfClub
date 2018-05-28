@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="IvanchenkoMaxim" content="">
+
+    <title>Max's Golf Club</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	 <style type="text/css">
+
+		
+	@media (max-width: 768px){
+			.slider {
+				width: 90%;
+				margin: 100px auto;
+			}
+	}
+	
+	@media (min-width: 769px){
+			.slider {
+				width: 80%;
+				margin: 100px auto;
+			}
+	}
+	
+	@media (min-width: 1199px){
+			.slider {
+				width: 60%;
+				margin: 100px auto;
+			}
+	}
+	</style>
+	
+	<script>
+		function validate(form) {
+			var reason = "";
+			if (form.name.value == "" || !/[А-я]/.test(form.name.value))
+				reason += "Имя может содержать только кириллицу и должно быть заполнено\n\n";
+			if (form.birthDate.value == "")
+				reason += "Дата рождения отсутствует\n\n";
+			if (form.login.value == "" || !/[A-Z]{1}[a-zA-Z0-9-_\.]{3,20}/.test(form.login.value))
+				reason += "Логин может состоять только из латинских букв и цифр, а также начинаться с заглавной буквы, и должен быть заполнен\n\n";
+			if (form.password.value == "" || /[^a-z]/.test(form.password.value))
+				reason += "Пароль может содержать только строчные латинские буквы";
+			if (form.password.value != form.passwordRepeat.value)
+				reason += "\nПароли не совпадают";
+				
+			if (reason == ""){
+				return true;  
+			}else {
+				alert(reason); 
+				return false;
+			}	
+		}
+	</script>
+	
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency-reg.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="./">Max's Golf Club</a>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto"> 				
+			<li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href = "./login">
+					<font color = "yellow">Log In</font>
+				</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="header-img">
+        </div>
+    </header>
+
+    <!-- Log In -->
+    <section id="login">
+		<div class="container">
+			<div>
+				<div class="col-lg-12 text-center">
+				<h2 class="section-heading">Sign Up</h2>
+			</div>
+			<div class = "login-form">
+				<form method="post" onSubmit="return validate(this)">
+					<div class="form-group">
+					  <label for="inputName" class="control-label col-xs-2">Your real name</label>
+					  <div class="col-xs-10">
+						<input name = "name" type="text" class="form-control" id="inputName" placeholder="name">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputBirth" class="control-label col-xs-2">Birth date</label>
+					  <div class="col-xs-10">
+						<input name="birthDate" type="date" class="form-control" min="1917-12-31" max="2014-12-31" id="inputBirth">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputEmail" class="control-label col-xs-2">Email</label>
+					  <div class="col-xs-10">
+						<input name="email" type="email" class="form-control" id="inputEmail" placeholder="email">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputLogin" class="control-label col-xs-2">Login</label>
+					  <div class="col-xs-10">
+						<input name="login" type="text" class="form-control" id="inputLogin" placeholder="login">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputPassword" class="control-label col-xs-2">Password</label>
+					  <div class="col-xs-10">
+						<input name = "password" type="password" class="form-control" id="inputPassword" placeholder="password">
+					  </div>
+					</div>
+					<div class="form-group">
+						<input name = "passwordRepeat" type="password" class="form-control" id="passwordRepeat" placeholder="repeat password">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <div class="col-xs-offset-2 col-xs-10">
+						<button type="submit" name="submit" value="Send" class="btn btn-primary">Register</button>
+					  </div>
+					</div>
+				</form>
+			</div>
+		</div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
+</html>

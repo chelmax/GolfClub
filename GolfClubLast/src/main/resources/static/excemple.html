@@ -1,0 +1,30 @@
+<html>
+<head>
+<script>
+    function validate(form) {
+        var reason = "";
+		
+        if (form.username.value == "" || !/[A-Z]{1}[A-z]/.test(form.username.value))
+            reason += "Ошибка имени ";
+        if (form.password.value == "" || /[^0-9]/.test(form.password.value))
+            reason += "Ошибка пароля ";
+
+        if (reason == "")
+            return true;  
+        else {
+            alert(reason);  
+            return false;
+        }
+    }
+</script>
+</head>
+<body>
+<div class = "xuy">
+    <form method="post" onSubmit="return validate(this)">
+        <input name="username" type="text" />
+        <input name="password" type="password" />
+        <input name="submit" value="Send" type="submit" />
+    </form>
+</div>
+</body>
+</html>

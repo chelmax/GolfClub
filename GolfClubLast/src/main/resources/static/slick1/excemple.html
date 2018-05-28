@@ -1,0 +1,13 @@
+<head>
+    <script type="text/javascript">
+        function GetCPU () {
+            var output = document.getElementById ("output");
+            output.innerHTML = "Information about the OS and CPU: " + navigator.oscpu;
+            output.innerHTML += "<br />The class of CPU: " + navigator.cpuClass;
+            output.innerHTML += "<br />System platform: " + navigator.platform;
+        }
+    </script>
+</head>
+<body onload="GetCPU ();">
+    <div id="output"></div>
+</body>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="IvanchenkoMaxim" content="">
+
+    <title>Max's Golf Club</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	 <style type="text/css">
+
+		
+	@media (max-width: 768px){
+			.slider {
+				width: 90%;
+				margin: 100px auto;
+			}
+	}
+	
+	@media (min-width: 769px){
+			.slider {
+				width: 80%;
+				margin: 100px auto;
+			}
+	}
+	
+	@media (min-width: 1199px){
+			.slider {
+				width: 60%;
+				margin: 100px auto;
+			}
+	}
+	</style>
+	
+	<script>
+		function validate(form) {
+			var reason = "";
+			if (form.name.value == "")
+				reason += "Имя должно быть заполнено\n\n";
+			if (form.size.value == "" || !/^-?\d+(?:\.\d+)?$/g.test(form.size.value))
+				reason += "Размер состоит из цифр и точки и должен быть заполнен\n\n";
+			if (form.pricePerDay.value == "" || !/[0-9]/.test(form.pricePerDay.value))
+				reason += "Цена может состоять из цифр и должна быть заполнена\n\n";
+			if (form.image.value == "")
+				reason += "Добавьте изображение поля\n\n";
+				
+			if (reason == ""){
+				return true;  
+			}else {
+				alert(reason); 
+				return false;
+			}	
+		}
+	</script>
+	
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency-reg.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="./">Max's Golf Club</a>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto"> 				
+			<li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href = "./admin_fields">
+					<font color = "yellow">Back</font>
+				</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="header-img">
+        </div>
+    </header>
+
+    <!-- Log In -->
+    <section id="login">
+		<div class="container">
+			<div>
+				<div class="col-lg-12 text-center">
+				<h2 class="section-heading">New Field Adding Form</h2>
+			</div>
+			<div class = "login-form">
+				<form method="post" onSubmit="return validate(this)" enctype="multipart/form-data">
+					<div class="form-group">
+					  <label for="inputName" class="control-label col-xs-2">Field's name</label>
+					  <div class="col-xs-10">
+						<input name = "fieldName" type="text" class="form-control" id="inputName" placeholder="name">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputOwnerName" class="control-label col-xs-2">Owner's name</label>
+					  <div class="col-xs-10">
+						<select name="owner" type="text" class="form-control"  id="inputOwnerName">
+							<!-- Owners' names here-->
+						</select>
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputCategory" class="control-label col-xs-2">Field's category</label>
+					  <div class="col-xs-10">
+						<select name="category" type="text" class="form-control" id="inputCategory" placeholder="category">
+							<!-- Categories here-->
+						</select>
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputSize" class="control-label col-xs-2">Field's size</label>
+					  <div class="col-xs-10">
+						<input name="size" type="text" class="form-control" id="inputSize" placeholder="size">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="inputPrice" class="control-label col-xs-2">Price per day</label>
+					  <div class="col-xs-10">
+						<input name = "pricePerDay" type="text" class="form-control" id="inputPrice" placeholder="price">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <label for="image" class="control-label col-xs-2">Image of the field</label>
+					  <div class="col-xs-10">
+						<input name = "image" type="file" class="form-control" id="image" placeholder="image" accept="image/jpeg,image/png">
+					  </div>
+					</div>
+					<div class="form-group">
+					  <div class="col-xs-offset-2 col-xs-10">
+						<button type="submit" name="submit" value="Send" class="btn btn-primary">Add Field</button>
+					  </div>
+					</div>
+				</form>
+			</div>
+		</div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
+</html>
