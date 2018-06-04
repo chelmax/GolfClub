@@ -33,7 +33,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o")
     , @NamedQuery(name = "Orders.findByIdOrder", query = "SELECT o FROM Orders o WHERE o.idOrder = :idOrder")
-    , @NamedQuery(name = "Orders.findByPrice", query = "SELECT o FROM Orders o WHERE o.price = :price")
     , @NamedQuery(name = "Orders.findByLeaseEnd", query = "SELECT o FROM Orders o WHERE o.leaseEnd = :leaseEnd")
     , @NamedQuery(name = "Orders.findByLeaseStart", query = "SELECT o FROM Orders o WHERE o.leaseStart = :leaseStart")})
 public class Orders implements Serializable {
@@ -44,10 +43,6 @@ public class Orders implements Serializable {
     @Basic(optional = false)
     @Column(name = "id_order")
     private Integer idOrder;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "price")
-    private int price;
     @Basic(optional = false)
     @NotNull
     @Column(name = "lease_end")
@@ -72,9 +67,8 @@ public class Orders implements Serializable {
         this.idOrder = idOrder;
     }
 
-    public Orders(Integer idOrder, int price, Date leaseEnd, Date leaseStart) {
+    public Orders(Integer idOrder, Date leaseEnd, Date leaseStart) {
         this.idOrder = idOrder;
-        this.price = price;
         this.leaseEnd = leaseEnd;
         this.leaseStart = leaseStart;
     }
@@ -85,14 +79,6 @@ public class Orders implements Serializable {
 
     public void setIdOrder(Integer idOrder) {
         this.idOrder = idOrder;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public Date getLeaseEnd() {

@@ -44,14 +44,14 @@
 	<script>
 		function validate(form) {
 			var reason = "";
-			if (form.name.value == "")
-				reason += "Имя должно быть заполнено\n\n";
+			if (form.fieldName.value == "" || !/^(?!#$)[^#$]+$/.test(form.fieldName.value))
+				reason += "Name field must be filled\n\n";
 			if (form.size.value == "" || !/^-?\d+(?:\.\d+)?$/g.test(form.size.value))
-				reason += "Размер состоит из цифр и точки и должен быть заполнен\n\n";
-			if (form.pricePerDay.value == "" || !/[0-9]/.test(form.pricePerDay.value))
-				reason += "Цена может состоять из цифр и должна быть заполнена\n\n";
+				reason += "Size is a float number and must be filled\n\n";
+			if (form.pricePerDay.value == "" || !/^\d+$/.test(form.pricePerDay.value))
+				reason += "Price is an integer and must be filled\n\n";
 			if (form.image.value == "")
-				reason += "Добавьте изображение поля\n\n";
+				reason += "Field's image has to be added\n\n";
 				
 			if (reason == ""){
 				return true;  
@@ -93,7 +93,7 @@
         </div>
     </header>
 
-    <!-- Log In -->
+    <!-- New Field Form -->
     <section id="login">
 		<div class="container">
 			<div>

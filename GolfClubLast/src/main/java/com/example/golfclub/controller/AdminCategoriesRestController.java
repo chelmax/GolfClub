@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @RestController
 @RequestMapping("/admin_categories")
-public class AdminTypesRestController {
+public class AdminCategoriesRestController {
     
     @Autowired
     CategoryRepository categoryRepository;
@@ -52,11 +52,7 @@ public class AdminTypesRestController {
             throws IOException {
         if(choose == null)
             return createPage().toString();
-        if(choose.equals("Изменить")){
-            Category category = categoryRepository.findByType(type).get();
-            category.setType(type);
-            categoryRepository.save(category);
-        } else if(choose.equals("Add new")){
+        if(choose.equals("Add new")){
             Category category = new Category();
             category.setType(type);
             categoryRepository.save(category);

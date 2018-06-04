@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @RestController
 @RequestMapping("/signup")
-public class SignupController {
+public class SignupRestController {
     
     @Autowired
     ClientRepository clientRepository;

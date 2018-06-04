@@ -35,7 +35,7 @@ public class HTMLPage {
     }
     
     public void navBarForAuthorized(String username,Integer ordersCount){
-        page = page.replaceFirst("href = \"./login\"", "href = \"./orders\"")
+        page = page.replaceFirst("href = \"./login\"", "href = \"./busket\"")
                     .replaceFirst("Log In", "Orders: " + ordersCount)
                     .replaceFirst("href = \"./signup\"", "")
                     .replaceFirst("Sign Up", username);

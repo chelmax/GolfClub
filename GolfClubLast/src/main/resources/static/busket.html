@@ -16,8 +16,9 @@
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-	 <style type="text/css">
-		
+	<style type="text/css">
+	
+	
 	@media (max-width: 768px){
 			.slider {
 				width: 90%;
@@ -40,41 +41,26 @@
 	}	
 	</style>
 	
-	<script>
-		function getInfo(){
-			var output = document.getElementById ("output");
-			if (navigator.cookieEnabled)
-			   output.innerHTML = "Ваш браузер принимает cookie";
-			else
-			   output.innerHTML = "Ваш браузер не может принимать cookie";
-			output.innerHTML += "<br /> Тип процессора: " + navigator.cpuClass; 
-			output.innerHTML += "<br /> Протокол: " + location.protocol;
-			output.innerHTML += "<br /> Имя хоста: " + location.hostname;
-			output.innerHTML += "<br /> Кол-во адресов в списке: " + history.length;
-			output.innerHTML += "<br /> Предыдущий URL: " + history.previous;
-			output.innerHTML += "<br /> Ширина экрана: " + screen.width;
-			output.innerHTML += "<br /> Высота экрана: " + screen.height;
-		}
-	</script>
-	
 
     <!-- Custom styles for this template -->
     <link href="css/agency-reg.css" rel="stylesheet">
+	
+	
 
   </head>
 
-  <body id="page-top" onload="getInfo();">
+  <body id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="./index.html">Max's Golf Club</a>
+        <a class="navbar-brand js-scroll-trigger" href="./">Max's Golf Club</a>
        
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto"> 				
 			<li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href = "./signup.html">
-					<font color = "yellow">Sign Up</font>
+				<a class="nav-link js-scroll-trigger" href = "./">
+					<font color = "yellow">Home</font>
 				</a>
             </li>
           </ul>
@@ -90,13 +76,25 @@
 
     <!-- Log In -->
     <section>
-      <div class="container">
+		<div class="container">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading">Results</h2>
+				<h2 class="section-heading">Your busket table</h2>
 			</div>
-			<div align = "center" class="section-subheading text-muted" id = "output">
+			<div align = "center" class="section-subheading text-muted">
+				<table cellspacing="5" cellpadding="10" border="2" width = "60%">
+					<tr>
+						<th class="text-center">Field name</th>
+						<th class="text-center">Lease start</th>
+						<th class="text-center">Lease end</th>
+					</tr>
+					<!-- Field's order info here -->
+				</table>
 			</div>
-      </div>
+		</div>
+		<br/>
+		<form align = "center">
+			<!-- Button here -->
+		</form>
     </section>
 
     <!-- Bootstrap core JavaScript -->

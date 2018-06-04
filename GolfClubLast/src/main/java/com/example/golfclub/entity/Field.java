@@ -75,7 +75,7 @@ public class Field implements Serializable {
         this.idField = idField;
     }
 
-    public Field(Integer idField, float size, String fieldName, int pricePerDay, int pricePerHour) {
+    public Field(Integer idField, float size, String fieldName, int pricePerDay) {
         this.idField = idField;
         this.size = size;
         this.fieldName = fieldName;

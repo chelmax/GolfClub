@@ -97,6 +97,23 @@
     <link href="css/agency.css" rel="stylesheet">
 
   </head>
+  
+  <script>
+		function validate(form) {
+			var reason = "";
+			if (form.leaseStart.value == "")
+				reason += "Lease start date must be filled\n\n";
+			if (form.leaseEnd.value == "")
+				reason += "Lease end date must be filled\n\n";
+				
+			if (reason == ""){
+				return true;  
+			}else {
+				alert(reason); 
+				return false;
+			}	
+		}
+	</script>
 
   <body id="page-top">
 
@@ -345,7 +362,7 @@
 			});
 		});
 	</script>
-
+	
   </body>
 
 </html>
