@@ -20,11 +20,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,6 +75,20 @@ public class UsersBusketRestController {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return null;
         }
+    }
+    
+    @DeleteMapping("/{fieldName}")
+    public String delete(HttpServletRequest request, HttpServletResponse response, @PathVariable String fieldName) 
+            throws IOException {
+        HttpSession session = request.getSession();
+        String busket = (String) session.getAttribute("busket");
+        List<String> orders = Arrays.asList(busket.split("#"));
+        String attr = orders.stream()
+                .map((order) -> !order.contains(fieldName) ? order : "")
+                .filter((order) -> !order.isEmpty())
+                .collect(Collectors.joining("#"));
+        session.setAttribute("busket", !attr.isEmpty() ? attr : null);
+        return showPage(request, response);
     }
     
     @PostMapping

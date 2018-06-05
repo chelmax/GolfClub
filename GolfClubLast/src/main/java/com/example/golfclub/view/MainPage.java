@@ -6,7 +6,6 @@
 package com.example.golfclub.view;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 /**
  *
@@ -15,7 +14,7 @@ import java.io.UnsupportedEncodingException;
 public class MainPage extends HTMLPage{
     
     public MainPage(String filepath) 
-            throws UnsupportedEncodingException, IOException {
+            throws IOException {
         super(filepath);
     }
     
@@ -81,16 +80,16 @@ public class MainPage extends HTMLPage{
                                                 "Price per day: " + price + "<br/>" +
                                             "</p>\n" +
                                             "<form onSubmit=\"return validate(this)\">\n" +
-                                            "<label class=\"control-label col-xs-2\" for=\"start\">Lease start</label>" +
-                                            "<input class=\"form-control\" type=\"date\" name=\"leaseStart\" id=\"start\">" +
-                                            "<br/>" +   
-                                            "<label class=\"control-label col-xs-2\" for=\"end\">Lease end</label>" +
-                                            "<input class=\"form-control\" type=\"date\" name=\"leaseEnd\" id=\"end\">" +
-                                            "<br/>" +
-                                            "<button name=\"nameButton\" class=\"btn btn-primary\" " +
-                                            "type=\"submit\" value = \"" + fieldName + "\" formmethod=\"POST\">\n" +
-                                            "Order field\n" +
-                                            "</button>\n" +
+                                                "<label class=\"control-label col-xs-2\" for=\"start\">Lease start</label>" +
+                                                "<input class=\"form-control\" type=\"date\" name=\"leaseStart\" id=\"start\">" +
+                                                "<br/>" +   
+                                                "<label class=\"control-label col-xs-2\" for=\"end\">Lease end</label>" +
+                                                "<input class=\"form-control\" type=\"date\" name=\"leaseEnd\" id=\"end\">" +
+                                                "<br/>" +
+                                                "<button name=\"nameButton\" class=\"btn btn-primary\" " +
+                                                "type=\"submit\" value = \"" + fieldName + "\" formmethod=\"POST\">\n" +
+                                                    "Order field\n" +
+                                                "</button>\n" +
                                             "</form>\n" +
                                         "</div>\n" +
                                     "</div>\n" +

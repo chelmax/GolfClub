@@ -21,7 +21,7 @@ public class UsersBusketPage extends HTMLPage{
     public void orderButton(){
         page = page.replaceFirst(
                 "<!-- Button here -->",
-                "<button class=\"btn btn-primary\" type=\"submit\" formmethod=\"POST\" >\n" +
+                "<button class=\"btn btn-primary\" type=\"submit\" formmethod=\"POST\">\n" +
                     "Order fields\n" +
                 "</button>\n"
         );
@@ -34,6 +34,14 @@ public class UsersBusketPage extends HTMLPage{
                 "<td class=\"text-center\">" + fieldName + "</td>" +
                 "<td class=\"text-center\">" + leaseStart + "</td>" +
                 "<td class=\"text-center\">" + leaseEnd + "</td>" +
+                "<td class=\"text-center\">" +
+                    "<form  onSubmit=\"return send(this)\">" +
+                        "<button name = \"nameButton\" class=\"btn btn-primary\" " + 
+                        "type=\"submit\" value=\"" + fieldName + "\">\n" +
+                            "Delete\n" +
+                        "</button>\n" +
+                    "</form>\n" +
+                "</td>" +
             "</tr>" +
             "<!-- Field's order info here -->"
         );
@@ -43,6 +51,10 @@ public class UsersBusketPage extends HTMLPage{
         page = page.replaceFirst(
             "<!-- Field's order info here -->", 
             "<caption class=\"text-center\">Your busket is empty</caption>"
+        );
+        page = page.replaceFirst(
+            "<th class=\"text-center\"></th>", 
+            ""
         );
     }
     

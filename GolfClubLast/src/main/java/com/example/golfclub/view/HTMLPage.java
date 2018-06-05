@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 
 /**
  *
@@ -21,7 +20,7 @@ public class HTMLPage {
     protected String page;
     
     public HTMLPage(String filepath) 
-            throws UnsupportedEncodingException, IOException{
+            throws IOException{
         File f = new File(filepath);
         BufferedReader br = new BufferedReader(
                     new InputStreamReader(

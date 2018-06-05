@@ -8,7 +8,6 @@ package com.example.golfclub.view;
 import com.example.golfclub.entity.Category;
 import com.example.golfclub.entity.Owner;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
@@ -18,7 +17,7 @@ import java.util.List;
 public class AddFieldPage extends HTMLPage {
     
     public AddFieldPage(String filepath, List<Owner> owners, List<Category> categories) 
-            throws UnsupportedEncodingException, IOException {
+            throws IOException {
         super(filepath);
         owners.forEach(owner -> 
                 setOwnerName(owner)

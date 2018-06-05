@@ -5,16 +5,17 @@
  */
 package com.example.golfclub.view;
 
-import com.example.golfclub.entity.Field;
+import com.example.golfclub.entity.Orders;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 /**
  *
  * @author max19
  */
-public class FieldsInfoPage extends HTMLPage{
+public class OrdersInfoPage extends HTMLPage{
     
-    public FieldsInfoPage(String filepath) throws IOException {
+    public OrdersInfoPage(String filepath) throws IOException {
         super(filepath);
     }
     
@@ -29,20 +30,22 @@ public class FieldsInfoPage extends HTMLPage{
                 );
     }
     
-    public void addField(Field field){
+    public void addOrder(Orders order){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
         page = page.replaceFirst(
-            "<!-- Fields section -->", 
+            "<!-- Orders section -->", 
             "<section>\n" +
+                "<section>\n" +
                 "<div class=\"container\">\n" +
                     "<div align = \"center\" class = \"col-lg-12\">" +
                         "<form method=\"POST\">\n" +
-                            "<input type=\"text\" name=\"fieldName\" readonly value=\"" + field.getFieldName() + "\">\n" +
-                            "<input type=\"text\" name=\"ownerName\" readonly value=\" " + field.getIdOwner().getName() + "\">\n" +
+                            "<input type=\"text\" name=\"id\" readonly value=\"" + order.getIdOrder() + "\">\n" +
+                            "<input type=\"text\" name=\"login\" readonly value=\"" + order.getIdClient().getLogin() + "\">\n" +
                             "<br/>" +
-                            "<input type=\"text\" name=\"categoryType\" readonly value=\"" + field.getIdCategory().getType()+ "\">\n" +
-                            "<input type=\"text\" name=\"size\" value=\"" + field.getSize() + "\">\n" +
+                            "<input type=\"text\" name=\"fieldName\" readonly value=\"" + order.getIdField().getFieldName() + "\">\n" +
+                            "<input type=\"text\" name=\"leaseStart\" value=\"" + format.format(order.getLeaseStart()) + "\">\n" +
                             "<br/>" +
-                            "<input type=\"text\" name=\"pricePerDay\" value=\"" + field.getPricePerDay() + "\">\n" +
+                            "<input type=\"text\" name=\"leaseEnd\" value=\"" + format.format(order.getLeaseEnd()) + "\">\n" +
                             "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
                             "<input id = \"delete\" type=\"radio\" name=\"choose\" value=\"Delete\">\n" +
                             "<label>Delete&nbsp.</label>\n" +
@@ -54,7 +57,7 @@ public class FieldsInfoPage extends HTMLPage{
                     "</div>\n" +
                 "</div>\n" +
             "</section>\n" +
-            "<!-- Fields section -->\n"
+            "<!-- Orders section -->\n"
         );
     }
 }

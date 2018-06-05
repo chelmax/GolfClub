@@ -14,7 +14,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class CategoriesInfoPage extends HTMLPage{
     
-    public CategoriesInfoPage(String filepath) throws UnsupportedEncodingException, IOException {
+    public CategoriesInfoPage(String filepath) throws IOException {
         super(filepath);
     }
     
@@ -22,23 +22,13 @@ public class CategoriesInfoPage extends HTMLPage{
         page = page.replaceFirst(
             "<!-- Сategories section -->", 
             "<section>\n" +
-                "<div class=\"row btmpadding\">\n" +
-                "<div class=\"col-lg-4 text-center\"></div>\n" +
-                "<div class=\"col-lg-4\">\n" +
-                "<div id=\"reg\">\n" +
-                "<div class=\"inside\">\n" +
-                "<div class=\"userFields\">\n" +
-                "<div class=\"userField\">\n" +
-                    "<form method=\"POST\">\n" +
-                        "<input type=\"text\" name=\"type\" value=\"" + type + "\">\n" +
-                        "<input type=\"submit\" name=\"choose\" value=\"Delete\">" +
-                    "</form>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "<div class=\"col-lg-4 text-center\"></div>\n" +
+                "<div class=\"container\">\n" +
+                    "<div align = \"center\" class = \"col-lg-12\">" +
+                        "<form method=\"POST\">\n" +
+                            "<input type=\"text\" name=\"type\" value=\"" + type + "\">\n" +
+                            "<input type=\"submit\" name=\"choose\" value=\"Delete\">" +
+                        "</form>\n" +
+                    "</div>\n" +
                 "</div>\n" +
             "</section>\n" +
             "<!-- Сategories section -->"

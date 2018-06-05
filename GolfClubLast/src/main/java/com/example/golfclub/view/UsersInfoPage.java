@@ -37,31 +37,22 @@ public class UsersInfoPage extends HTMLPage{
         page = page.replaceFirst(
             "<!-- Users section -->", 
             "<section>\n" +
-                "<div class=\"row btmpadding\">\n" +
-                "<div class=\"col-lg-4 text-center\"></div>\n" +
-                "<div class=\"col-lg-4\">\n" +
-                "<div id=\"reg\">\n" +
-                "<div class=\"inside\">\n" +
-                "<div class=\"userFields\">\n" +
-                "<div class=\"userField\">\n" +
-                    "<form method=\"POST\">\n" +
-                        "<input type=\"text\" name=\"login\" value=\"" + login + "\" readonly=\"\">\n" +
-                        "<input type=\"text\" name=\"name\" value=\"" + name + "\">\n" +
-                        "<input type=\"text\" name=\"email\" value=\"" + email + "\">\n" +
-                        "<input type=\"text\" name=\"date\" value=\"" + format.format(birthDate) + "\">\n" +
-                        "<br/>" +
-                        "<input type=\"submit\" name=\"request\" value=\"Выполнить\">\n" +
-                        "<input id = \"delete\" type=\"radio\" name=\"choose\" value=\"Удалить\">\n" +
-                        "<label for=\"del\">Удалить</label>\n" +
-                        "<input id = \"change\" type=\"radio\" name=\"choose\" value=\"Изменить\">\n" +
-                        "<label for=\"change\">Изменить</label>\n" +
-                    "</form>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "<div class=\"col-lg-4 text-center\"></div>\n" +
+                "<div class=\"container\">\n" +
+                    "<div align = \"center\" class = \"col-lg-12\">" +
+                        "<form method=\"POST\">\n" +
+                            "<input type=\"text\" name=\"login\" readonly value=\"" + login + "\" readonly>\n" +
+                            "<input type=\"text\" name=\"name\" value=\"" + name + "\">\n" +
+                            "<br/>" +
+                            "<input type=\"text\" name=\"email\" value=\"" + email + "\">\n" +
+                            "<input type=\"text\" name=\"date\" value=\"" + format.format(birthDate) + "\">\n" +
+                            "<br/>" +
+                            "<input id = \"delete\" type=\"radio\" name=\"choose\" value=\"Delete\">\n" +
+                            "<label>Delete&nbsp.</label>\n" +
+                            "<input id = \"change\" type=\"radio\" name=\"choose\" value=\"Change\">\n" +
+                            "<label>Change&nbsp</label>\n" +
+                            "<input type=\"submit\" name=\"request\" value=\"Execute\">\n" +
+                        "</form>\n" +
+                    "</div>\n" +
                 "</div>\n" +
             "</section>\n" +
             "<!-- Users section -->\n"

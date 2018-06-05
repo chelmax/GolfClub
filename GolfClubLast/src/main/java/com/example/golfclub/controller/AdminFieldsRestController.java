@@ -52,7 +52,7 @@ public class AdminFieldsRestController {
             throws IOException {
         if(choose == null)
             return createPage().toString();
-        if(choose.equals("Изменить")){
+        if(choose.equals("Change")){
             Field field = fieldRepository.findByFieldName(fieldName).get();
             field.setFieldName(fieldName);
             try {

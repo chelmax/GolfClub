@@ -13,5 +13,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author max19
  */
 public interface OrdersRepository extends JpaRepository<Orders, Integer> {
-    
 }
